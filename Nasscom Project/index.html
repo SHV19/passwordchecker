@@ -1,0 +1,84 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta charset="utf-8"> -->
+	<title>Password Tester</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="container1">
+	<div class="header">
+		<p>Cyber Security Project</p>
+		<h1>
+			Password Strength Tester
+		</h1>
+
+		
+	</div>
+	</section>
+
+	<div class="container">
+		 <div class="input-box">
+		 	<input type="password" id="Password" placeholder="Password">
+		 	<button type="submit"><img src="arrow.png"></button>
+		 	<p id="message">Password is<span id="strenght"></span></p>
+		 </div>
+	</div>
+
+	<div class="info">
+		<h3>Created By:</h3>
+		<ul>
+			<li><a href="https://www.instagram.com/ig_shv/" target="blank">Sai Hari Vignesh</a></li>
+			<li>20191CSE0522 - 5CSE9</li>
+			
+		</ul>
+	
+		 	
+	</div>
+
+<script>
+	
+	var pass=document.getElementById("Password");
+	var msg=document.getElementById("message");
+	var str=document.getElementById("strenght");
+
+	pass.addEventListener('input', ()=> {
+		if (pass.value.length > 0) {
+			msg.style.display="block";
+
+		}
+
+		else{
+
+			msg.style.display="none";
+
+		}
+
+		if(pass.value.length < 4) {
+			str.innerHTML=" weak";
+			pass.style.borderColor="#ff5925";
+			msg.style.color="#ff5925";
+		}
+
+		else if(pass.value.length >= 4 && pass.value.length < 8) {
+			str.innerHTML=" medium";
+			pass.style.borderColor="yellow";
+			msg.style.color="yellow";
+		}
+		else if(pass.value.length >= 8) {
+			str.innerHTML=" strong";
+			pass.style.borderColor="#26d730";
+			msg.style.color="#26d730";
+		}
+	})
+
+
+</script>
+	
+	<footer> <small>  Copyright &copy; 2021 SHV. All Rights Reserved</small> </footer> 
+
+</body>
+</html>
